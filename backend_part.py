@@ -15,7 +15,7 @@ def pso(c1,c2,w,particles,iters,func):
 
     if func == "Sphere":
 
-        x = optimizer.optimize(fx.ackley, iters=iters)
+        x = optimizer.optimize(fx.sphere, iters=iters)
 
         m = Mesher(func=fx.sphere,
                    limits=[(-1, 1), (-1, 1)])
