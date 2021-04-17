@@ -13,6 +13,8 @@ def plot_command():
     pos_value = Label(root, text=best_pos)
     pos_value.place(relx=0.5, rely=0.2, relheight=0.08, relwidth=0.2)
 
+    plot_show(func_text.get())
+
 root = Tk()
 root.wm_title("PSO ALGORITHM")
 
