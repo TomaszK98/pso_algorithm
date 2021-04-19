@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from pyswarms.utils.functions import single_obj as fx
 from pyswarms.utils.plotters import plot_cost_history, plot_contour, plot_surface
 from pyswarms.utils.plotters.formatters import Mesher, Designer
+import random
 
 def plot_show(func):
 
@@ -30,10 +31,14 @@ def pso(c1,c2,w,particles,iters,func):
                'c2':c2,
                'w':w}
 
+    center = random.randint(-32,32)
+
     global optimizer
     optimizer = ps.single.GlobalBestPSO(n_particles=particles,
                                         dimensions=2,
-                                        options=options)
+                                        options=options,
+                                        center=center,
+                                        init_pos=None)
 
     if func == "Sphere":
 
